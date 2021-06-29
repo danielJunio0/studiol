@@ -1,0 +1,25 @@
+dourado escruro
+
+#bb9737
+
+dourado claro
+bisque
+
+preto claro
+#252323
+
+preto escuro
+
+#111
+
+roxo escuro
+#5b2677
+
+
+azul escuro
+
+#0d0e33
+
+rosa escuro
+
+#6b0040
