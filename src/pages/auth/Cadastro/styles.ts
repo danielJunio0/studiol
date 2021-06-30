@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import {colors} from '../../../styles';
 
 export const Separator = styled.div`
     
     font-size: 14px;
-    color: ${colors.bisque};
+    color: #a8a8b3;
     margin: 32px 0;
     display:flex;
     align-items:center;
@@ -13,7 +12,7 @@ export const Separator = styled.div`
         content:'';
         flex:1;
         height: 1px;
-        background:${colors.bisque};
+        background:#a8a8b3;
         margin-right:16px;
     }
 
@@ -21,16 +20,8 @@ export const Separator = styled.div`
         content:'';
         flex:1;
         height: 1px;
-        background: ${colors.bisque};
+        background:#a8a8b3;
         margin-left:16px;
     }
                                 
-`;
-
-export const Container = styled.div`
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    color: ${colors.bisque};
 `;

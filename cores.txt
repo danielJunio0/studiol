@@ -4,6 +4,7 @@ dourado escruro
 
 dourado claro
 bisque
+#ffe4c4
 
 preto claro
 #252323
