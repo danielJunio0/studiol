@@ -1,23 +1,14 @@
+import { createContext, useState, useEffect } from 'react';
 import { Login } from './pages/auth/Login';
 import { Home } from './pages/Home/index'
 import { Cadastro } from './pages/auth/Cadastro';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { AuthContextProvider } from './contexts/AuthContext';
 function App() {
 
   const theme = createMuiTheme({
     palette: {
-      primary:{
-        main:'#ffe4c4',
-        dark:'#5b2677',
-        
-      },
-      info:{
-        main:'#bb9737'
-      },
-      secondary: {
-        main: '#bb9737',
-      },
     }
   });
 
@@ -25,11 +16,13 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Route path="/" exact component={Login}/>
-        <Route path="/Login" exact component={Login}/>
-        <Route path="/Home" exact component={Home}/>
-        
-        <Route path="/Cadastro" exact component={Cadastro}/>
+        <AuthContextProvider>
+          <Route path="/" exact component={Login} />
+          <Route path="/Login" exact component={Login} />
+          <Route path="/Home" exact component={Home} />
+
+          <Route path="/Cadastro" exact component={Cadastro} />
+        </AuthContextProvider>
       </ThemeProvider>
     </BrowserRouter>
 

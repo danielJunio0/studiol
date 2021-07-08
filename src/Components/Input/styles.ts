@@ -3,5 +3,4 @@ import TextField  from '@material-ui/core/TextField';
 import {colors} from '../../styles';
 
 export const Container = styled(TextField)`
-    color:${colors.bisque};
 `;

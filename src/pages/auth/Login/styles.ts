@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import {colors} from '../../../styles';
+import { colors } from '../../../styles';
 
+import Card from '@material-ui/core/Card';
 export const Separator = styled.div`
     
     font-size: 14px;
@@ -33,4 +34,13 @@ export const Container = styled.div`
     align-items: center;
     height: 100vh;
     color: ${colors.bisque};
+`;
+
+export const CardContainer = styled(Card)`
+    width: 345px;
+    background:#252323;
+    border: 3px solid ${colors.bisque};
+    border-radius:15px;
+    box-shadow:0px 0px 25px ${colors.yellow}, 0px 0px 15px ${colors.yellow} inset;
+
 `;

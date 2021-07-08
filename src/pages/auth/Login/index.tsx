@@ -1,29 +1,34 @@
-import React,{ useState } from 'react';
+import React,{ useState} from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import googleIconImg from '../../../assets/images/google-icon.svg';
 import LogoImg from '../../../assets/images/logosalao1.png';
 import { BackGroundGradient } from '../../../Components/index';
 
 import { Button } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Switch from '@material-ui/core/Switch';
-
-import { Separator } from './styles';
+import { Separator,CardContainer } from './styles';
 import { Input } from '../../../Components/Input';
+import { colors } from '../../../styles';
+
+import { useAuth} from '../../../hooks/useAuth';
+
 export function Login() {
 
 const[isChecked,setIsChecked] = useState(false);
-
 const history = useHistory();
+
+const {user, LogarComGoogle} = useAuth();
 
 function navigateToHome(){
     history.push('/Home');
 }
 
-function Logar(){
-    
+async function Logar(){
+    if(!user){
+       await LogarComGoogle();
+    }
+    navigateToHome();
 }
 
     return (
@@ -35,7 +40,7 @@ function Logar(){
                 height: '100vh',
                 color:'#ffe4c4'
             }}>
-                <Card style={{ width: '345px', background:'#252323' }}>
+                <CardContainer>
                     <CardContent>
                         <div style={{
                             display: 'flex',
@@ -52,13 +57,12 @@ function Logar(){
                                 fontWeight: 500,
                                 background: '#ea4335',
                                 color: '#ffe4c4',
-
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-
                                 cursor: 'pointer',
-                            }}>
+                            }}
+                            onClick={Logar}>
                                 <img src={googleIconImg} alt="Logo do Google" style={{
                                     marginRight: '8px',
                                 }} />
@@ -71,20 +75,20 @@ function Logar(){
                                 display: 'flex',
                                 flexDirection: 'column',
                             }}>
-                                <TextField label="E-mail" variant="outlined" color="primary" style={{color:'#ffe4c4'}} required />
-                                <TextField label="Senha" variant="outlined" style={{ marginTop: '12px', marginBottom: '12px' }} />
-                                <Input variant="outlined"/>
-                                <div style={{display:'flex', justifyContent:'space-between', flexDirection:'row', alignItems:'center', color:'#ffe4c4'}}>
+                                
+                                <Input  label="E-mail" variant="outlined" style={{marginBottom:'12px'}}/>
+                                <Input type="password"  label="Senha" variant="outlined"/>
+                                <div style={{display:'flex', justifyContent:'space-between', flexDirection:'row', alignItems:'center', color: colors.bisque}}>
                                     <p>Lembrar de mim</p>
-                                    <Switch color='primary' checked={isChecked} onChange={() => { setIsChecked(!isChecked) }} />
+                                    <Switch style={{color: colors.bisque}} checked={isChecked} onChange={() => { setIsChecked(!isChecked) }} />
                                 </div>
 
-                                <Button onClick={navigateToHome} type='submit' style={{ background: '#bb9737', color: '#111' }}>Entrar</Button>
-                                <div style={{marginTop:'10px', color:'#ffe4c4'}}>NÃO TEM UMA CONTA? <Link to="/Cadastro">Inscreva-se</Link></div>
+                                <Button onClick={Logar} type='submit' style={{ background: colors.gold, color: '#fff' }}>Entrar</Button>
+                                <div style={{marginTop:'10px', color:colors.bisque}}>Não tem uma conta? <Link to="/Cadastro" style={{color: colors.gold}}>Inscreva-se</Link></div>
                             </form>
                         </div>
                     </CardContent>
-                </Card>
+                </CardContainer>
             </div>
 
         </BackGroundGradient>
