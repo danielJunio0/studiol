@@ -1,0 +1,9 @@
+se for mobile
+
+foto quadrada 375 x 375
+foto retangular 375x468
+
+se não for mobile
+foto quadrada 614x614
+foto retangular 614 x 767
+

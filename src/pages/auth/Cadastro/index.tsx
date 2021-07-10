@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import googleIconImg from '../../../assets/images/google-icon.svg';
 import LogoImg from '../../../assets/images/logosalao1.png';
-import { BackGroundGradient } from '../../../Components/index';
+import { BackGround } from '../../../Components/index';
 
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
@@ -29,7 +29,7 @@ function Logar(){
 }
 
     return (
-        <BackGroundGradient>
+        <BackGround>
             <div style={{
                 justifyContent: 'center',
                 display: 'flex',
@@ -86,7 +86,7 @@ function Logar(){
                 </CardContainer>
             </div>
 
-        </BackGroundGradient>
+        </BackGround>
 
     );
 

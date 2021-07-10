@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { colors } from '../../styles';
 export const Separator = styled.div`
     
     font-size: 14px;
@@ -26,7 +26,38 @@ export const Separator = styled.div`
                                 
 `;
 
-export const Container = styled.div`
-    background:#111;
-    height: 100vh;
+export const ContainerApp = styled.div`
+    background: ${colors.background};
+    height: 100%;
+`;
+
+export const ContainerQuadradoMobile = styled.div`
+    max-height: 375px;
+    max-width: 375px;
+    margin-bottom:'20px';
+`;
+
+export const ContainerQuadradoWeb = styled.div`
+    max-height: 614px;
+    max-width: 614px;
+    margin-bottom:'20px';
+`;
+
+export const ContainerRetanguloMobile = styled.div`
+    
+    max-height: 468px;
+    max-width: 375px;
+    margin-bottom:'20px';
+`;
+
+export const ContainerRetanguloWeb = styled.div`
+    
+    max-height: 767px;
+    max-width: 614px;
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 `;

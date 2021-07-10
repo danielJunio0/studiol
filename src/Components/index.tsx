@@ -1,1 +1,1 @@
-export * from './BackgroundGradient';
+export * from './Background';

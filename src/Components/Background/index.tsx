@@ -5,7 +5,7 @@ interface Props {
     children?: ReactNode;
 }
 
-export const BackGroundGradient = ({ children }: Props) => {
+export const BackGround = ({ children }: Props) => {
 
     return (
         <Container>
